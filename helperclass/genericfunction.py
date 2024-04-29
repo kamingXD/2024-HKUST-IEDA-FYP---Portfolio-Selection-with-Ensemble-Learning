@@ -10,7 +10,7 @@ from datetime import datetime
 from datetime import timedelta
 from random import randrange
 from geom_median.numpy import compute_geometric_median
-from helperclass import database
+from helperClass import database
 
 
 class GenericFunction:
