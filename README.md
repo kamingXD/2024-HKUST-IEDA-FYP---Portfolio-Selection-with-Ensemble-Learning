@@ -73,7 +73,10 @@ This project includes 3 classes for computing, back-testing and result backup.
 * Initialization
 ```
 # Import package
-from genericfunction import *
+from helperClass.genericfunction import *
+from helperClass.stockdata import StockData
+import warnings
+warnings.filterwarnings('ignore')
 
 # Fix seed for comparability and reproducability
 random.seed(99)
@@ -105,7 +108,7 @@ gf.gamma2 = 0.001                    --- Set gamma^2 for MVP
 gf.aggregate_method = "geo_median"   --- Set aggregation method
 gf.boot_properties = 50              --- Set when you run bootstrapping
 gf.set_ssr_properties(50,15)         --- Set when you run subset resampling 
-gf.set_ego_properties(50,252,50,15)  --- Set when you run ensemble strategies
+gf.set_ensemble_properties(50,252,50,15)  --- Set when you run ensemble strategies
 gf.set_n_day_rebalance(1)            --- Rebalance period
 
 # Perform strategy
@@ -126,7 +129,7 @@ gf.gamma2 = 0.001                    --- Set gamma^2 for MVP
 gf.aggregate_method = "geo_median"   --- Set aggregation method
 gf.boot_properties = 50              --- Set when you run bootstrapping
 gf.set_ssr_properties(50,15)         --- Set when you run subset resampling 
-gf.set_ego_properties(50,252,50,15)  --- Set when you run ensemble strategies
+gf.set_ensemble_properties(50,252,50,15)  --- Set when you run ensemble strategies
 gf.set_n_day_rebalance(1)            --- Rebalance period
 
 # Perform plotting
@@ -141,7 +144,7 @@ gf.gamma2 = 0.001                    --- Set gamma^2 for MVP
 gf.aggregate_method = "geo_median"   --- Set aggregation method
 gf.boot_properties = 50              --- Set when you run bootstrapping
 gf.set_ssr_properties(50,15)         --- Set when you run subset resampling 
-gf.set_ego_properties(50,252,50,15)  --- Set when you run ensemble strategies
+gf.set_ensemble_properties(50,252,50,15)  --- Set when you run ensemble strategies
 gf.set_n_day_rebalance(1)            --- Rebalance period
 
 # Perform plotting
@@ -156,11 +159,11 @@ gf.gamma2 = 0.001                    --- Set gamma^2 for MVP
 gf.aggregate_method = "geo_median"   --- Set aggregation method
 gf.boot_properties = 50              --- Set when you run bootstrapping
 gf.set_ssr_properties(50,15)         --- Set when you run subset resampling 
-gf.set_ego_properties(50,252,50,15)  --- Set when you run ensemble strategies
+gf.set_ensemble_properties(50,252,50,15)  --- Set when you run ensemble strategies
 gf.set_n_day_rebalance(1)            --- Rebalance period
 
 # Perform plotting
-gf.plot_random_time_random_stock("boot_ssr_mvp",50,365,365,n,'stock_time_2024-04-03_00_22_28_915340.pickle',False)
+gf.plot_random_time_random_stock("boot_ssr_mvp",50,365,365,n,'helperData/stock_time_2024-04-03_00_22_28_915340.pickle',False)
 ```
 
 * Check the results
